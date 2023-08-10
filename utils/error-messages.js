@@ -1,20 +1,19 @@
-const DEFAULT_VALIDATION_ERROR_MESSAGE = "Переданы некорректные данные";
+const DEFAULT_VALIDATION_ERROR_MESSAGE = 'Переданы некорректные данные';
 const DEFAULT_VALIDATION_ERROR_CODE = 400;
 
-const DEFAULT_AUTH_ERROR_MESSAGE = "Необходима авторизация";
+const DEFAULT_AUTH_ERROR_MESSAGE = 'Необходима авторизация';
 const DEFAULT_AUTH_ERROR_CODE = 401;
 
-const DEFAULT_FORBIDDEN_ERROR_MESSAGE =
-  "Доступ к запрошенному ресурсу запрещен";
+const DEFAULT_FORBIDDEN_ERROR_MESSAGE = 'Доступ к запрошенному ресурсу запрещен';
 const DEFAULT_FORBIDDEN_ERROR_CODE = 403;
 
-const DEFAULT_NOT_FOUND_ERROR_MESSAGE = "Запрошенный ресурс не найден";
+const DEFAULT_NOT_FOUND_ERROR_MESSAGE = 'Запрошенный ресурс не найден';
 const DEFAULT_NOT_FOUND_ERROR_CODE = 404;
 
-const DEFAULT_CONFLICT_ERROR_MESSAGE = "Данные уже используются";
+const DEFAULT_CONFLICT_ERROR_MESSAGE = 'Данные уже используются';
 const DEFAULT_CONFLICT_ERROR_CODE = 409;
 
-const DEFAULT_SERVER_ERROR_MESSAGE = "На сервере произошла ошибка";
+const DEFAULT_SERVER_ERROR_MESSAGE = 'На сервере произошла ошибка';
 const DEFAULT_SERVER_ERROR_CODE = 500;
 
 module.exports = {

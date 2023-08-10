@@ -1,3 +1,3 @@
-const devKey = "dev-key";
+const devKey = 'dev-key';
 
 module.exports = { devKey };
