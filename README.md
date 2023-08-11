@@ -9,3 +9,7 @@ ___
 ## Запуск проекта
 `npm run start` — запускает сервер   
 `npm run dev` — запускает сервер с hot-reload
+
+___
+## Ссылки
+###### API сервиса - https://api.leh1ch-diploma.nomoreparties.co/
