@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
   const { authorization } = req.headers;
 
   if (!authorization || !authorization.startsWith('Bearer ')) {
-    next(new AuthError('не удалось выполнить авторизацию'));
+    next(new AuthError('Не удалось выполнить авторизацию'));
     return;
   }
 
@@ -21,7 +21,7 @@ module.exports = (req, res, next) => {
       NODE_ENV === 'production' ? JWT_SECRET : devKey,
     );
   } catch (err) {
-    next(new AuthError('не удалось выполнить авторизацию'));
+    next(new AuthError('Не удалось выполнить авторизацию'));
     return;
   }
 

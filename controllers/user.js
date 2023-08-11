@@ -1,6 +1,4 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 const bcrypt = require('bcryptjs');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const ValidationError = require('../errors/validation-error');
@@ -42,9 +40,9 @@ const createUser = (req, res, next) => {
     }))
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        next(new ValidationError('переданы некорректные данные пользователя'));
+        next(new ValidationError('Переданы некорректные данные пользователя'));
       } else if (err.code === 11000) {
-        next(new ConflictError('адрес электронной почты уже используется'));
+        next(new ConflictError('Адрес электронной почты уже используется'));
       } else {
         next(err);
       }
@@ -54,12 +52,12 @@ const createUser = (req, res, next) => {
 const getCurrentUser = (req, res, next) => {
   User.findById(req.user._id)
     .orFail(() => {
-      throw new NotFoundError('пользователь не найден');
+      throw new NotFoundError('Пользователь не найден');
     })
     .then((data) => res.send({ data }))
     .catch((err) => {
       if (err.name === 'CastError') {
-        next(new ValidationError('переданы некорректные данные пользователя'));
+        next(new ValidationError('Переданы некорректные данные пользователя'));
       } else {
         next(err);
       }
@@ -72,14 +70,14 @@ const updateProfile = (req, res, next) => {
     runValidators: true,
   })
     .orFail(() => {
-      throw new NotFoundError('пользователь не найден');
+      throw new NotFoundError('Пользователь не найден');
     })
     .then((data) => res.send({ data }))
     .catch((err) => {
       if (err.name === 'CastError' || err.name === 'ValidationError') {
-        next(new ValidationError('переданы некорректные данные пользователя'));
+        next(new ValidationError('Переданы некорректные данные пользователя'));
       } else if (err.code === 11000) {
-        next(new ConflictError('адрес электронной почты уже используется'));
+        next(new ConflictError('Адрес электронной почты уже используется'));
       } else {
         next(err);
       }

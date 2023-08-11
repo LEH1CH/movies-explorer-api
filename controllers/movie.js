@@ -11,7 +11,7 @@ const getAllMovies = (req, res, next) => {
 const deleteMovieById = (req, res, next) => {
   Movie.findOneAndRemove({ movieId: req.params.movieId, owner: req.user._id })
     .orFail(() => {
-      throw new NotFoundError('фильм не найден');
+      throw new NotFoundError('Фильм не найден');
     })
     .then((movie) => res.send({ data: movie }))
     .catch((err) => {
